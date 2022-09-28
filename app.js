@@ -6,6 +6,7 @@ const dotenv = require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+const PORT = process.env.PORT;
 
 // home route
 app.get('/', function (req, res) {
@@ -34,7 +35,7 @@ app.post("/", function (req, res) {
     });
 });
 
-// listening to the port 3000
-app.listen(3000, function (req, res) {
-    console.log("server running at port 3000.");
+// listening to the port
+app.listen(PORT, function (req, res) {
+    console.log(`server running at port ${PORT}.`);
 });
